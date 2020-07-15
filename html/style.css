@@ -37,6 +37,11 @@ ol {
     padding-left: 0;
 }
 
+ul {
+	padding-left: 0;
+	text-indent: 1.5rem;
+}
+
 ol > li {
     list-style: none;
     position: relative;
