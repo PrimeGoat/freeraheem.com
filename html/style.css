@@ -151,6 +151,10 @@ ol > li:before {
 		display: initial;
 	}
 
+	.embedded {
+		transform: scale(0.95, 0.95);
+	}
+
 	.desktop {
 		display: none;
 	}
