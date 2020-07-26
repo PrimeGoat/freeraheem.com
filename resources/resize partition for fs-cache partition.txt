@@ -1,0 +1,100 @@
+Used this as a reference: https://www.ismay.ca/2015/10/repartition-a-debian-digital-ocean-droplet/
+
+1. Check the main storage device:
+# fdisk -l /dev/vda
+
+
+2. Install GRML Rescue Boot
+
+# apt-get install grml-rescueboot
+# wget http://ftp.halifax.rwth-aachen.de/grml//grml64-small_2020.06.iso
+# update-grub
+
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-3.16.0-4-amd64
+Found initrd image: /boot/initrd.img-3.16.0-4-amd64
+Found Grml ISO image: /boot/grml/grml64-small_2014.11.iso
+done
+
+3. Boot from GRML
+
+Type reboot or shutdown -r now on the terminal window and wait for the Grub menu
+Select the Grml Rescue Image Option from the Grub menu
+Select ‘advanced options’ from the Grml boot menu
+Select ‘copy Grml to RAM’ option
+
+4. Repartition
+
+1. use resize2fs to shrink the existing filesystem:
+
+root@grml ~ # fsck.ext4 -f /dev/vda1
+root@grml ~ # resize2fs -M /dev/vda1
+
+2. use parted to shrink the partition and create a new LVM partition:
+
+# parted /dev/vda
+(parted) resizepart 1 78123007s
+(parted) mkpart primary 78123008s 100%
+(parted) set 2 lvm on
+(parted) quit
+
+3. Verify your work:
+
+# resize2fs /dev/vda1
+# fdisk -l /dev/vda
+
+4. Reboot to Debian:
+
+root@grml ~ # reboot
+
+6. Format and mount:
+
+# mkfs.ext4 /dev/vda2
+# mount /dev/vda2 /home
+# df -h
+
+7. Add your new volumes to /etc/fstab:
+
+/dev/vda2   /wherever   ext4   defaults,nosuid,nodev   0    2
+
+
+
+fsck.ext4 -f /dev/vda1
+resize2fs -M /dev/vda1
+
+# parted /dev/vda
+
+resizepart 1 78123007s
+mkpart primary 78123008 100%
+set 2 lvm on
+quit
+
+78123008
+
+
+
+
+CLIENT SIDE:
+
+# sudo apt-get install cachefilesd xfsprogs
+# mkfs.xfs -f /dev/vda2
+
+/etc/fstab:
+/dev/vda2        /var/cache/fscache    xfs     auto,nouser,exec,rw,async,noatime,attr2,nodiscard,inode64,noquota       0 0
+10.116.0.6:/var/storage		/var/storage nfs	rw,async,fsc
+
+
+edit /etc/default/cachefilesd
+Add:
+RUN=yes
+
+edit /etc/cachefilesd.conf
+Uncomment the selinux line
+
+
+modprobe cachefiles
+# service cachefilesd start
+
+Mount the nfs share:
+# mount 10.116.0.6:/var/storage /var/storage -t nfs -o rw,async,fsc
+
