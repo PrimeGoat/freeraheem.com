@@ -1,13 +1,31 @@
+cat >> /etc/hosts
+
 # FreeRaheem public-facing network
-161.35.50.56	central
-64.227.24.93	web4
-204.48.18.156	web3
-159.65.239.185	web2
-134.122.20.141	web1
+161.35.50.56    central
+134.122.20.141  web1
+159.65.239.185  web2
+192.81.213.215  web3
+161.35.118.136  web4
 
 # FreeRaheem private-facing network
-10.116.0.6	pcentral
-10.116.0.2	pweb1
-10.116.0.3	pweb2
-10.116.0.5	pweb3
-10.116.0.4	pweb4
+10.116.0.6      pcentral
+10.116.0.2      pweb1
+10.116.0.3      pweb2
+10.116.0.4      pweb3
+10.116.0.5      pweb4
+
+
+
+iptables -A INPUT -i eth0 -p icmp -j ACCEPT
+iptables -A INPUT -i eth0 -p tcp -m tcp --tcp-flags ALL FIN,PSH,URG -j DROP ;# Christmas tree packets
+iptables -A INPUT -i eth0 -p tcp -m tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
+iptables -A INPUT -i eth0 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -i eth0 -m conntrack --ctstate INVALID -j DROP
+iptables -A INPUT -i eth0 -p tcp -m conntrack --ctstate NEW -m tcp ! --tcp-flags FIN,SYN,RST,ACK SYN -j DROP ;# NEW connection that doesn't begin with SYN
+
+# SSH
+iptables -A INPUT -i eth0 -p tcp -m tcp --dport 22 -j ACCEPT
+
+# HTTP(S)
+iptables -A INPUT -i eth0 -p tcp -m tcp --dport 80 -j ACCEPT
+iptables -A INPUT -i eth0 -p tcp -m tcp --dport 443 -j ACCEPT

@@ -6,9 +6,7 @@ Used this as a reference: https://www.ismay.ca/2015/10/repartition-a-debian-digi
 
 2. Install GRML Rescue Boot
 
-# apt-get install grml-rescueboot
-# wget http://ftp.halifax.rwth-aachen.de/grml//grml64-small_2020.06.iso
-# update-grub
+apt-get -y install grml-rescueboot && cd /boot/grml/ && wget http://ftp.halifax.rwth-aachen.de/grml/grml64-small_2020.06.iso && update-grub
 
 Generating grub configuration file ...
 Found linux image: /boot/vmlinuz-3.16.0-4-amd64
@@ -27,61 +25,40 @@ Select ‘copy Grml to RAM’ option
 
 1. use resize2fs to shrink the existing filesystem:
 
-root@grml ~ # fsck.ext4 -f /dev/vda1
-root@grml ~ # resize2fs -M /dev/vda1
+# fsck.ext4 -f /dev/vda1 && resize2fs -M /dev/vda1
 
 2. use parted to shrink the partition and create a new LVM partition:
 
 # parted /dev/vda
-(parted) resizepart 1 78123007s
-(parted) mkpart primary 78123008s 100%
-(parted) set 2 lvm on
-(parted) quit
+resizepart 1 78123007s
+mkpart primary 78123008s 100%
+quit
 
 3. Verify your work:
 
-# resize2fs /dev/vda1
-# fdisk -l /dev/vda
+# resize2fs /dev/vda1 && fdisk -l /dev/vda
 
 4. Reboot to Debian:
 
 root@grml ~ # reboot
 
-6. Format and mount:
-
-# mkfs.ext4 /dev/vda2
-# mount /dev/vda2 /home
-# df -h
-
-7. Add your new volumes to /etc/fstab:
-
-/dev/vda2   /wherever   ext4   defaults,nosuid,nodev   0    2
+6. Add your new volumes to /etc/fstab:
 
 
 
-fsck.ext4 -f /dev/vda1
-resize2fs -M /dev/vda1
-
-# parted /dev/vda
-
-resizepart 1 78123007s
-mkpart primary 78123008 100%
-set 2 lvm on
-quit
-
-78123008
+# /etc/fstab: static file system information.
+UUID=997099e3-394b-44f6-8e1a-d10f0ff1810f       /       ext4    errors=remount-ro       0       1
 
 
-
-
-CLIENT SIDE:
-
-# sudo apt-get install cachefilesd xfsprogs
-# mkfs.xfs -f /dev/vda2
-
-/etc/fstab:
 /dev/vda2        /var/cache/fscache    xfs     auto,nouser,exec,rw,async,noatime,attr2,nodiscard,inode64,noquota       0 0
-10.116.0.6:/var/storage		/var/storage nfs	rw,async,fsc
+10.116.0.6:/var/storage         /var/storage nfs        auto,rw,async,fsc
+
+Verify content: cat /etc/fstab
+
+7. Format and mount:
+
+# apt-get -y install cachefilesd xfsprogs nfs-common && mkfs.xfs /dev/vda2 && mkdir /var/storage && chmod 755 /var/storage && mount /var/storage && mount /var/cache/fscache && df -h
+# modprobe cachefiles
 
 
 edit /etc/default/cachefilesd
@@ -92,9 +69,79 @@ edit /etc/cachefilesd.conf
 Uncomment the selinux line
 
 
-modprobe cachefiles
-# service cachefilesd start
+# service cachefilesd restart ; service cachefilesd restart ; ps aux|grep cache
 
-Mount the nfs share:
-# mount 10.116.0.6:/var/storage /var/storage -t nfs -o rw,async,fsc
+
+DB SETUP
+
+
+MASTER:
+Edit /etc/mysql/mariadb.conf.d/50-server.cnf
+skip-networking         = 0
+bind-address            = 10.116.0.6
+
+run mysqld:
+SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';
+
+Sample: GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.100.%'  IDENTIFIED BY 'my-new-password' WITH GRANT OPTION;
+
+
+
+SLAVES:
+
+# sudo service mysqld stop ; sudo systemctl disable mysqld
+
+# sed -i.bak -e 's/\/var\/www\//\/var\/storage\/www\//g'  /etc/nginx/sites-available/main /etc/nginx/sites-available/freeraheem.com
+
+update IP: 161.35.118.136
+sed -e 's/listen .*:443/listen 192.81.213.215:443/g' /etc/nginx/sites-available/main /etc/nginx/sites-available/freeraheem.com
+sed -i.bak -e 's/listen .*:443/listen 192.81.213.215:443/g' /etc/nginx/sites-available/main /etc/nginx/sites-available/freeraheem.com
+
+# service nginx restart
+
+
+/dev/sda on /var/storage type xfs (rw,noatime,attr2,discard,inode64,noquota)
+
+
+
+SERVER SIDE:
+/etc/exports:
+10.116.0.0/24(rw,async,fsc,root_squash)
+
+/etc/default/nfs-common:
+STATDOPTS="-p 662 -o 2020"
+
+/etc/default/nfs-kernel-server:
+# Number of servers to start up
+RPCNFSDCOUNT=64
+
+# Runtime priority of server (see nice(1))
+RPCNFSDPRIORITY=0
+
+# Options for rpc.mountd.
+# If you have a port-based firewall, you might want to set up
+# a fixed port here using the --port option. For more information,
+# see rpc.mountd(8) or http://wiki.debian.org/SecuringNFS
+# To disable NFSv4 on the server, specify '--no-nfs-version 4' here
+RPCMOUNTDOPTS="--manage-gids --no-nfs-version 4 -p 892 -o 2020"
+
+# Do you want to start the svcgssd daemon? It is only required for Kerberos
+# exports. Valid alternatives are "yes" and "no"; the default is "no".
+NEED_SVCGSSD=""
+
+# Options for rpc.svcgssd.
+RPCSVCGSSDOPTS=""
+
+
+
+
+
+
+
+# modprobe nfsd nfs lockd
+# echo "options lockd nlm_udpport=32769 nlm_tcpport=32803" > /etc/modprobe.d/nfs-lockd.conf
+
+
+
+
 
