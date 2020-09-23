@@ -418,11 +418,21 @@ ol > li:before {
 	}
 }
 
+.centerText {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 @media all and (min-width: 1220px) {
 	.columns {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+	}
+
+	.max315 {
+		max-width: 315px;
 	}
 
 	.column {
@@ -434,7 +444,7 @@ ol > li:before {
 	.columns {
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: stretch;
 		flex-direction: column;
 		margin: auto;
 	}
