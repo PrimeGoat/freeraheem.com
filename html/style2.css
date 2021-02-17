@@ -39,6 +39,7 @@ ol {
 
 ul {
 	padding-left: 0;
+	list-style-position: inside;
 	text-indent: 1.5rem;
 }
 
