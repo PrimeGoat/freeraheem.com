@@ -7,6 +7,14 @@ body {
 	margin: 0px;
 }
 
+.larger {
+	font-size: larger;
+}
+
+.xlarge {
+	font-size: x-large;
+}
+
 .box {
 	display: inline-block;
 }
