@@ -124,6 +124,10 @@ ol > li:before {
 	margin-left: 15px;
 }
 
+.marginBiggerLeft {
+	margin-left: 45px;
+}
+
 .contactBlock {
 	display: flex;
 	flex-direction: row;
