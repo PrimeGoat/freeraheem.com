@@ -18,8 +18,8 @@ done
 
 Type reboot or shutdown -r now on the terminal window and wait for the Grub menu
 Select the Grml Rescue Image Option from the Grub menu
-Select ‘advanced options’ from the Grml boot menu
-Select ‘copy Grml to RAM’ option
+Select ï¿½advanced optionsï¿½ from the Grml boot menu
+Select ï¿½copy Grml to RAMï¿½ option
 
 4. Repartition
 
@@ -91,11 +91,11 @@ SLAVES:
 
 # sudo service mysqld stop ; sudo systemctl disable mysqld
 
-# sed -i.bak -e 's/\/var\/www\//\/var\/storage\/www\//g'  /etc/nginx/sites-available/main /etc/nginx/sites-available/freeraheem.com
+# sed -i.bak -e 's/\/var\/www\//\/var\/storage\/www\//g'  /etc/nginx/sites-available/main /etc/nginx/sites-available/freeraheem.org
 
 update IP: 161.35.118.136
-sed -e 's/listen .*:443/listen 192.81.213.215:443/g' /etc/nginx/sites-available/main /etc/nginx/sites-available/freeraheem.com
-sed -i.bak -e 's/listen .*:443/listen 192.81.213.215:443/g' /etc/nginx/sites-available/main /etc/nginx/sites-available/freeraheem.com
+sed -e 's/listen .*:443/listen 192.81.213.215:443/g' /etc/nginx/sites-available/main /etc/nginx/sites-available/freeraheem.org
+sed -i.bak -e 's/listen .*:443/listen 192.81.213.215:443/g' /etc/nginx/sites-available/main /etc/nginx/sites-available/freeraheem.org
 
 # service nginx restart
 
