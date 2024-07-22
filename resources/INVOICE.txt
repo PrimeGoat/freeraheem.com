@@ -1,0 +1,196 @@
+Here’s a comprehensive breakdown of the work I did for and on your website, including the time estimates, costs, etc.
+
+### Processes and Time Estimates
+
+1. **Domain Registration**
+   - **What I did:** Registered your domain name and set up DNS settings.
+   - **Time taken:** 2 hours
+   - **Rate (2020):** $40/hour
+   - **Cost:** $80
+
+2. **Setting Up Google Workspace**
+   - **What I did:** Configured Google Workspace, set up professional email accounts, provided a phone number, and managed email hosting.
+   - **Time taken:** 5 hours
+   - **Rate (2020):** $50/hour
+   - **Cost:** $250
+
+3. **Setting Up Cloudflare**
+   - **What I did:** Configured Cloudflare for enhanced security and performance. Cloudflare is a service that protects and accelerates websites by distributing content globally and shielding against various cyber threats.
+   - **Time taken:** 5 hours
+   - **Rate (2020):** $50/hour
+   - **Cost:** $250
+
+4. **Virtual Machines Deployment**
+   - **What I did:** Set up 4 Debian Linux VMs on DigitalOcean (3 web servers and 1 storage/database server).
+   - **Time taken:** 10 hours
+   - **Rate (2020):** $50/hour
+   - **Cost:** $500
+
+5. **Server Configuration and Setup**
+   - **What I did:** Installed and configured Debian Linux, set up mirrored NFS mount for redundancy.
+   - **Time taken:** 15 hours
+   - **Rate (2020):** $50/hour
+   - **Cost:** $750
+
+6. **System Hardening and Security**
+   - **What I did:** Hardened and secured all systems, performed periodic penetration tests.
+   - **Time taken:** 20 hours
+   - **Rate (2020):** $60/hour
+   - **Cost:** $1,200
+
+7. **Ongoing Maintenance (2020-2024)**
+   - **What I did:** Regular updates, reimplementation after hosting account loss, continuous management using GitHub.
+   - **Time taken:** 4 hours
+   - **Rate (2020):** $60/hour
+   - **Cost:** $240
+
+8. **Development Work (Automation of Reports)**
+   - **What I did:** Automated report generation via scripting using data from Cloudflare.
+   - **Time taken:** 30 hours
+   - **Rate (2020):** $60/hour
+   - **Cost:** $1,800
+
+### Total Cost Estimate
+
+Here’s the estimated total cost for everything:
+
+- Domain Registration: $80
+- Google Workspace Setup: $250
+- Cloudflare Setup: $250
+- VM Deployment: $500
+- Server Setup: $750
+- Security: $1,200
+- Maintenance: $240
+- Development Work: $1,800
+
+**Total Estimated Cost:** $5,070
+
+### Discounted Rate
+
+I have condensed this work into a flat rate of $500, as a token of support. This specific work has been my profession for over a decade, so it was easy and straightforward. The more difficult work was the Free Raheem website. That is the bulk of the work being invoiced. I have thoroughly accounted for the various aspects of this work and have included historic rates, so that you'll be charged less for earlier years, when the work didn't cost as much as it does with today's rates.
+
+---
+
+**Total Amount Due:** $500
+
+### Additional Invoice Summary
+
+#### HTML Development (Historical Rates)
+1. **Session 1 (2020)**:
+   - **Commits**: 10
+   - **Hours and Cost**: 3 hours * $50/hour = $150
+2. **Session 2 (2020)**:
+   - **Commits**: 15
+   - **Hours and Cost**: 4 hours * $50/hour = $200
+3. **Session 3 (2020)**:
+   - **Commits**: 20
+   - **Hours and Cost**: 5 hours * $50/hour = $250
+4. **Session 4 (2020)**:
+   - **Commits**: 20
+   - **Hours and Cost**: 4 hours * $50/hour = $200
+5. **Session 5 (2020)**:
+   - **Commits**: 20
+   - **Hours and Cost**: 4 hours * $50/hour = $200
+6. **Periodic Updates (2020-2024)**:
+   - **Commits**: 85
+   - **Hours and Cost**:
+     - 2020: 20 hours * $50/hour = $1,000 (20 commits)
+     - 2021: 20 hours * $55/hour = $1,100 (20 commits)
+     - 2022: 20 hours * $60/hour = $1,200 (20 commits)
+     - 2023: 10 hours * $65/hour = $650 (15 commits)
+     - 2024: 10 hours * $70/hour = $700 (10 commits)
+
+**Total HTML Cost**: $3,400 (2020 Sessions) + $4,650 (Periodic Updates) = $8,050
+
+#### CSS Development (Historical Rates)
+1. **Session 1 (2020)**:
+   - **Commits**: 10
+   - **Hours and Cost**: 3 hours * $55/hour = $165
+2. **Session 2 (2020)**:
+   - **Commits**: 10
+   - **Hours and Cost**: 3 hours * $55/hour = $165
+3. **Session 3 (2020)**:
+   - **Commits**: 15
+   - **Hours and Cost**: 3 hours * $55/hour = $165
+4. **Periodic Updates (2020-2024)**:
+   - **Commits**: 35
+   - **Hours and Cost**:
+     - 2020: 5 hours * $55/hour = $275 (10 commits)
+     - 2021: 5 hours * $60/hour = $300 (10 commits)
+     - 2022: 5 hours * $65/hour = $325 (10 commits)
+     - 2023: 3 hours * $70/hour = $210 (3 commits)
+     - 2024: 3 hours * $75/hour = $225 (2 commits)
+
+**Total CSS Cost**: $495 (2020 Sessions) + $1,335 (Periodic Updates) = $1,830
+
+#### JavaScript Development (Historical Rates)
+1. **Session 1 (2020)**:
+   - **Commits**: 5
+   - **Hours and Cost**: 3 hours * $60/hour = $180
+2. **Periodic Updates (2020-2024)**:
+   - **Commits**: 8
+   - **Minutes and Cost**:
+     - 2020: 20 minutes * $60/hour = $20 (2 commits)
+     - 2021: 20 minutes * $65/hour = $22 (2 commits)
+     - 2022: 20 minutes * $70/hour = $23 (2 commits)
+     - 2023: 10 minutes * $75/hour = $13 (1 commit)
+     - 2024: 10 minutes * $80/hour = $14 (1 commit)
+
+**Total JavaScript Cost**: $180 (2020 Sessions) + $92 (Periodic Updates) = $272
+
+#### Total Image Work
+- **Total Images**: 76
+- **Time per Image**: 3 minutes (1/20 of an hour)
+- **Cost per Image**: $50/hour * (1/20) = $2.50
+- **Total Cost for Image Work**: 76 images * $2.50 = $190
+
+### Monthly Server Hosting and Domain Renewal
+- **Start Date of Free Raheem Website:** January 2020
+- **Total Months:** 54 months
+- **Server Hosting Cost:** $30/month
+- **Domain Renewal Cost:** $12/year
+
+**Total Hosting Cost:** 54 months * $30 = $1,620  
+**Total Domain Renewal Cost:** (54/12) * $12 = $54
+
+### Google Workspace Billing (@freeraheem email hosting)
+Date           Amount Paid (USD)
+Sep 1, 2022:   $ 8.72
+Oct 1, 2022:   $11.76
+Nov 10, 2022:  $16.00
+Dec 1, 2022:   $ 7.52
+Jan 1, 2023:   $11.76
+Mar 1, 2023:   $23.52
+Mar 1, 2023:   $20.00
+Apr 24, 2023:  $10.00
+Jun 2, 2023:   $25.00
+Aug 17, 2023:  $ 3.80
+Aug 17, 2023:  $10.64
+Sep 1, 2023:   $ 2.10
+Oct 1, 2023:   $13.07
+Nov 8, 2023:   $13.46
+Feb 2, 2024:   $37.09
+Mar 7, 2024:   $13.07
+Apr 2, 2024:   $14.14
+May 2, 2024:   $15.68
+Jul 19, 2024:  $31.36
+Total: $288.69
+Adjusted: $285
+
+### Grand Total
+- **HTML Development**: $8,050
+- **CSS Development**: $1,830
+- **JavaScript Development**: $272
+- **Total Image Work**: $190
+- **Initial Work Discounted Rate**: $500
+- **Hosting and Domain Renewal Cost**: $1,674
+- **Google Workspace Email Hosting**: $285
+
+**Grand Total Cost:** $12,801
+**ADJUSTED:** $12,500
+
+---
+
+Please note that you are not being charged for the Wikipedia work.
+
+Let me know if you have any questions or need more info.

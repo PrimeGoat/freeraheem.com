@@ -1,0 +1,16 @@
+external links: 2 forbes articles
+take the links and add them as references
+2 supreme as references
+4 new references
+20,21,new 4
+
+6 totals.
+
+
+<ref name="Forbes1">{{cite web |title=Businessman convicted in two criminal cases has new legal representation, himself |url=https://www.forbes.com/sites/legalnews/2018/05/29/businessman-convicted-in-two-criminal-cases-has-new-legal-representation-himself/ |website=Forbes |access-date=2024-07-19}}</ref>
+
+<ref name="Forbes2">{{cite web |title=Businessman Raheem Brennerman Denied Evidence To Prove Innocence, Vows To Fight On |url=https://www.forbes.com/sites/legalnews/2018/11/30/businessman-raheem-brennerman-denied-evidence-to-prove-innocence-vows-to-fight-on/ |website=Forbes |access-date=2024-07-19}}</ref>
+
+<ref name="SCOTUS1">{{cite web |title=Supreme Court Docket 20-6638 |url=https://www.supremecourt.gov/docket/docketfiles/html/public/20-6638.html |website=Supreme Court of the United States |access-date=2024-07-19}}</ref>
+
+<ref name="SCOTUS2">{{cite web |title=Supreme Court Docket 20-6895 |url=https://www.supremecourt.gov/docket/docketfiles/html/public/20-6895.html |website=Supreme Court of the United States |access-date=2024-07-19}}</ref>
