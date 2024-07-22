@@ -10,7 +10,7 @@ The main website will be: www.freeraheem.org (the other website: www.freerjbrenn
 
 LAYOUT:
 
-HOME     |     LEGAL HEADLINES    |     MEDIA HEADLINES     |     COURT DOCUMENTS     |     BIOGRAPHY     |     CONTACT 
+HOME     |     INJUSTICE SUMMARY    |     MEDIA HEADLINES     |     COURT DOCUMENTS     |     BIOGRAPHY     |     CONTACT 
 
 (viewers will land of the HOME page and be able to click on the various sub-heading pages)
 
@@ -76,7 +76,7 @@ Don't let the persecution of an innocent black man continue....Support Raheem by
 ===============================================
 
 =====================
-LEGAL HEADLINES (Page):
+INJUSTICE SUMMARY (Page):
 =====================
 
 2.) Move the current entire Home page at website: www.freeraheem.org to this page (excluding the headline section which will remain at the new HOME page as highlighted above.) 
@@ -314,7 +314,7 @@ The main website will be: www.freeraheem.org (the other website: www.freerjbrenn
 
 LAYOUT:
 
-HOME   |   LEGAL HEADLINES   |   MEDIA HEADLINES   |   COURT DOCUMENTS   | BIOGRAPHY   | CONTACT
+HOME   |   INJUSTICE SUMMARY   |   MEDIA HEADLINES   |   COURT DOCUMENTS   | BIOGRAPHY   | CONTACT
 
 (viewers will land on the HOME page and be able to click on the various sub-heading pages) 
 
@@ -384,7 +384,7 @@ Don't let the persecution of an innocent black man continue....
 =====================================================================================================
 
 =====================
-LEGAL HEADLINES Page:
+INJUSTICE SUMMARY Page:
 =====================
 
 2.) Move the entire current page at the website: www.freeraheem.org to this page (excluding the heading section which will remain at the new HOME page as highlighted above. 
@@ -598,12 +598,12 @@ ________________________________________________________________________________
 
 Good Morning Denis:
 
-Below is a summary of amendments/updates to the LEGAL HEADLINES (Page) of the new site. 
+Below is a summary of amendments/updates to the INJUSTICE SUMMARY (Page) of the new site. 
 
 These amendments will make it more succinct and clear for readers. 
 
 ======================
-LEGAL HEADLINES (Page):
+INJUSTICE SUMMARY (Page):
 ======================
 
 Within the immediate Section below (Replace existing text with the below):
@@ -683,7 +683,7 @@ ASK MANHATTAN FEDERAL PROSECUTORS AND FEDERAL COURT (JUDGE KAPLAN AND JUDGE SULL
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 (NOTE: This section will no longer appear within the COURT DOCUMENT page of the site but within this 
-LEGAL HEADLINES page of the website
+INJUSTICE SUMMARY page of the website
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ------------------------------------------------------------------------------------------------------------------------------------------
